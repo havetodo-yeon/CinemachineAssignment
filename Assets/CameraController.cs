@@ -58,18 +58,18 @@ public class CameraController : MonoBehaviour
             currentCamera.LookAt = CameraLookAt[1];
             currentCamera.Follow = CameraFollow[1];
 
-            FollowOffset.m_FollowOffset = new Vector3(0, 0.33f, -3.8f);
-            TrackedObjectOffset.m_TrackedObjectOffset = new Vector3(0, 1.94f, 0);
+            FollowOffset.m_FollowOffset = FollowOffset.m_FollowOffset - new Vector3(0, 1f, -1f);
+            TrackedObjectOffset.m_TrackedObjectOffset = TrackedObjectOffset.m_TrackedObjectOffset - new Vector3(0, 1.94f, 0);
         }
         if (Input.GetMouseButtonUp(0))
         {
             currentCamera.LookAt = CameraLookAt[0];
             currentCamera.Follow = CameraFollow[0];
-            FollowOffset.m_FollowOffset = new Vector3(0, 5f, -10f);
-            TrackedObjectOffset.m_TrackedObjectOffset = new Vector3(0, 3.78f, 0);
+            FollowOffset.m_FollowOffset = FollowOffset.m_FollowOffset + new Vector3(0, 1f, -1f);
+            TrackedObjectOffset.m_TrackedObjectOffset = TrackedObjectOffset.m_TrackedObjectOffset + new Vector3(0, 1.94f, 0);
         }
 
-        if (!isFirstPersonActive && Input.GetKeyDown(KeyCode.LeftShift))
+/*        if (!isFirstPersonActive && Input.GetKeyDown(KeyCode.LeftShift))
         {
 
         }
@@ -77,5 +77,5 @@ public class CameraController : MonoBehaviour
         {
 
         }
-    }
+*/    }
 }
